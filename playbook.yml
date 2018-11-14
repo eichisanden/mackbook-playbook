@@ -1,0 +1,47 @@
+- hosts: localhost
+  connection: local
+  gather_facts: no
+  become: no
+
+  tasks:
+    - name: add tap repository to homebrew
+      homebrew_tap:
+        name: caskroom/cask
+
+    - name: update homebrew
+      homebrew: update_homebrew=yes
+
+    - name: install homebrew cask packages
+      homebrew_cask:
+        name: "{{ item }}"
+      with_items:
+        - docker
+        - evernote
+        - firefox
+        - google-chrome
+        - intellij-idea
+        - iterm2
+        - jetbrains-toolbox
+        - vagrant
+        - virtualbox
+        - visual-studio-code
+
+    - name: install hombrew package
+      homebrew:
+        name: "{{ item }}"
+      with_items:
+        - ansible
+        - git
+        - jq
+        - nkf
+        - peco
+        - python
+        - tree
+        - wget
+        - zsh
+    - name: install oh-my-zsh
+      shell: sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
+
+    - name: change default shell
+      shell: chsh -s /usr/local/bin/zsh
+
