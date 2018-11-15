@@ -1,0 +1,12 @@
+- hosts: localhost
+  connection: local
+  gather_facts: no
+  become: no
+
+  tasks:
+    - name: install oh-my-zsh
+      shell: sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
+
+    - name: change default shell
+      shell: chsh -s /usr/local/bin/zsh
+
