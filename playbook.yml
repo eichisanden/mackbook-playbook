@@ -28,11 +28,6 @@
 
     - name: install homebrew packages
       homebrew:
-    - name: install oh-my-zsh
-      shell: sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
-
-    - name: change default shell
-      shell: chsh -s /usr/local/bin/zsh
         name:
           - ansible
           - git
