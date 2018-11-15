@@ -26,22 +26,22 @@
         - virtualbox
         - visual-studio-code
 
-    - name: install hombrew package
+    - name: install homebrew packages
       homebrew:
-        name: "{{ item }}"
-      with_items:
-        - ansible
-        - git
-        - jq
-        - nkf
-        - peco
-        - python
-        - tree
-        - wget
-        - zsh
     - name: install oh-my-zsh
       shell: sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
 
     - name: change default shell
       shell: chsh -s /usr/local/bin/zsh
+        name:
+          - ansible
+          - git
+          - jq
+          - nkf
+          - nodebrew
+          - peco
+          - python
+          - tree
+          - wget
+          - zsh
 
