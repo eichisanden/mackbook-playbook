@@ -16,6 +16,7 @@
         name: "{{ item }}"
       with_items:
         - cheatsheet
+        - clipy
         - docker
         - dropbox
         - evernote
