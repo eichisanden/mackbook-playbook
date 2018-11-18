@@ -2,11 +2,15 @@
   connection: local
   gather_facts: no
   become: no
+  vars:
+    mas_installed_apps:
+      - { id: 497799835, name: "Xcode (10.1)" }
 
   tasks:
     - name: add tap repository to homebrew
-      homebrew_tap:
-        name: caskroom/cask
+      homebrew_tap: name={{ item }}
+      with_items: 
+        - mas-cli/tap
 
     - name: update homebrew
       homebrew: update_homebrew=yes
@@ -35,6 +39,7 @@
           - ansible
           - git
           - jq
+          - mas
           - nkf
           - nodebrew
           - peco
@@ -43,3 +48,5 @@
           - wget
           - zsh
 
+  roles:
+    - geerlingguy.mas
