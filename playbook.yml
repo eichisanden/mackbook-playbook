@@ -48,5 +48,12 @@
           - wget
           - zsh
 
+    - name: install vim
+      homebrew:
+        name:
+          - vim
+        install_options:
+          --with-override-system-vi
+
   roles:
     - geerlingguy.mas
