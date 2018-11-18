@@ -55,5 +55,12 @@
         install_options:
           --with-override-system-vi
 
+    - name: 'check oh-my-zsh'
+      stat: path=~/.oh-my-zsh/
+      register: d 
+    - name: 'install oh-my-zsh'
+      shell: sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
+      when: d.stat.exists == false
+
   roles:
     - geerlingguy.mas
