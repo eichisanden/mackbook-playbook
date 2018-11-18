@@ -38,6 +38,7 @@
         name:
           - ansible
           - git
+          - go
           - jq
           - mas
           - nkf
