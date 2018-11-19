@@ -58,6 +58,8 @@
           - nodebrew
           - peco
           - python
+          - rbenv
+          - ruby-build
           - tree
           - wget
           - zsh
