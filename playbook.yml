@@ -82,6 +82,28 @@
         name: "{{ ansible_ssh_user }}"
         shell: /usr/local/bin/zsh
 
+    - name: 'setting macOS'
+      osx_defaults: >
+        domain={{ item.domain }}
+        key={{ item.key }}
+        type={{ item.type }}
+        value={{ item.value }}
+        state={{ item.state|default('present') }}
+      with_items:
+        # auto hide dock (need "killall Dock")
+        - { domain: com.apple.dock, key: autohide, type: bool, value: true }
+        - { domain: com.apple.dock, key: autohide-time-modifier, type: int, value: 0 }
+        # Show Status bar in Finder (need "killall Finder")
+        - { domain: com.apple.finder, key: ShowStatusBar, type: bool, value: true }
+        # Show Path bar in Finder
+        - { domain: com.apple.finder, key: ShowPathbar, type: bool, value: true }
+        # Show Tab bar in Finder
+        - { domain: com.apple.finder, key: ShowTabView, type: bool, value: true }
+        # Show the hidden files
+        - { domain: com.apple.finder, key: AppleShowAllFiles, type: bool, value: true }
+        # Show the battery percentage from the menu bar (need "killall SystemUIServer")
+        - { domain: com.apple.menuextra.battery, key: ShowPercent, type: string, value: "YES" }
+
   roles:
     - geerlingguy.mas
     - geerlingguy.dotfiles
