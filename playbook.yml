@@ -3,8 +3,21 @@
   gather_facts: no
   become: no
   vars:
+    # for ansible-role-mas
     mas_installed_apps:
       - { id: 497799835, name: "Xcode (10.1)" }
+    # for ansible-role-dotfiles
+    dotfiles_repo: "git@github.com:eichisanden/dotfiles.git"
+    dotfiles_repo_local_destination: "~/src/github.com/eichisanden/dotfiles"
+    dotfiles_files:
+      - .bashrc
+      - .eslintrc
+      - .gitattributes
+      - .gitconfig
+      - .gitignore
+      - .psqlrc
+      - .vimrc
+      - .zshrc
 
   tasks:
     - name: add tap repository to homebrew
@@ -67,5 +80,19 @@
         name: "{{ ansible_ssh_user }}"
         shell: /usr/local/bin/zsh
 
+    - name: Pull dotfiles
+      git: repo=git@github.com:eichisanden/dotfiles.git dest=~/src/github.com/eichisanden/
+      register: pull_dotfiles_result
+
+    - name: Copy dotfiles
+      copy: src=/path.to/tmp/dotfiles/{{ item }} dest=~/{{ item }} force=no
+      with_items:
+        - '.bashrc'
+        - '.vimrc'
+        - '.gitconfig'
+      when: pull_dotfiles_result | changed
+
   roles:
     - geerlingguy.mas
+    - geerlingguy.dotfiles
+
