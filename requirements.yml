@@ -1,2 +1,4 @@
 ---
 - name: geerlingguy.mas
+- name: geerlingguy.dotfiles
+
