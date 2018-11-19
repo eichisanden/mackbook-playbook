@@ -94,6 +94,8 @@
         # auto hide dock (need "killall Dock")
         - { domain: com.apple.dock, key: autohide, type: bool, value: true }
         - { domain: com.apple.dock, key: autohide-time-modifier, type: int, value: 0 }
+        # Move dock to left side
+        - { domain: com.apple.dock, key: orientation, type: string, value: "left" }
         # Show Status bar in Finder (need "killall Finder")
         - { domain: com.apple.finder, key: ShowStatusBar, type: bool, value: true }
         # Show Path bar in Finder
@@ -102,6 +104,8 @@
         - { domain: com.apple.finder, key: ShowTabView, type: bool, value: true }
         # Show the hidden files
         - { domain: com.apple.finder, key: AppleShowAllFiles, type: bool, value: true }
+        # Enable text selection in QuickLook
+        - { domain: com.apple.finder, key: QLEnableTextSelection, type: bool, value: true }
         # Show the battery percentage from the menu bar (need "killall SystemUIServer")
         - { domain: com.apple.menuextra.battery, key: ShowPercent, type: string, value: "YES" }
 
