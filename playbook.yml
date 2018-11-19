@@ -52,6 +52,7 @@
           - ansible
           - git
           - go
+          - hugo
           - jq
           - mas
           - nkf
