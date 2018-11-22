@@ -110,6 +110,16 @@
         # Show the battery percentage from the menu bar (need "killall SystemUIServer")
         - { domain: com.apple.menuextra.battery, key: ShowPercent, type: string, value: "YES" }
 
+    - name: 'check dein'
+      stat: path=~/.cache/dein
+      register: d
+    - name: 'install dein'
+      shell: sh <(curl -fsSL https://raw.githubusercontent.com/Shougo/dein.vim/master/bin/installer.sh) ~/.cache/dein
+      args:
+        executable: /bin/bash  # for process substitution
+      register: e
+      when: d.stat.exists == false
+
   roles:
     - geerlingguy.mas
     - geerlingguy.dotfiles
