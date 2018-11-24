@@ -34,6 +34,7 @@
       with_items:
         - cheatsheet
         - clipy
+        - discord
         - docker
         - dropbox
         - evernote
@@ -42,6 +43,7 @@
         - intellij-idea
         - iterm2
         - jetbrains-toolbox
+        - kindle
         - opera
         - vagrant
         - virtualbox
