@@ -34,6 +34,7 @@
       with_items:
         - cheatsheet
         - clipy
+        - corretto
         - discord
         - docker
         - dropbox
