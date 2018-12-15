@@ -123,6 +123,16 @@
       register: e
       when: d.stat.exists == false
 
+    - name: list installed vagrant plugin
+      shell: "vagrant plugin list | awk '{ print $1 }'"
+      changed_when: false
+      register: vagrant_plugin_list
+    - name: install vagrant plugin
+      shell: "vagrant plugin install {{item}}"
+      with_items:
+        - vagrant-vbguest
+      when: item not in vagrant_plugin_list.stdout_lines
+
   roles:
     - geerlingguy.mas
     - geerlingguy.dotfiles
