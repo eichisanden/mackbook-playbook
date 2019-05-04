@@ -58,6 +58,7 @@
           - ansible
           - git
           - go
+          - gradle
           - hugo
           - jq
           - mas
