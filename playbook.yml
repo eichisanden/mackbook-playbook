@@ -116,7 +116,7 @@
         # Show the battery percentage from the menu bar (need "killall SystemUIServer")
         - { domain: com.apple.menuextra.battery, key: ShowPercent, type: string, value: "YES" }
         # Set function keys as default (Need reboot)
-        - { domain: NSGlobalDomain, key: com.apple.keyboard.fnState, type: bool, value: true }
+        - { domain: NSGlobalDomain, key: com.apple.keyboard.fnState, type: int, value: 1 }
 
     - name: 'check dein'
       stat: path=~/.cache/dein
