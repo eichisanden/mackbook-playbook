@@ -41,9 +41,9 @@
         - evernote
         - firefox
         - google-chrome
-        - intellij-idea
+        #- intellij-idea
         - iterm2
-        - jetbrains-toolbox
+        #- jetbrains-toolbox
         - kindle
         - opera
         - postman
