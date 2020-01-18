@@ -60,6 +60,7 @@
           - git
           - go
           - gradle
+          - heroku/brew/heroku
           - hugo
           - jq
           - mas
