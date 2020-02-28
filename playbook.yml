@@ -73,7 +73,6 @@
           - ruby-build
           - tree
           - wget
-          - zsh
 
     - name: install vim
       homebrew:
@@ -91,7 +90,7 @@
     - name: 'change default shell'
       user:
         name: "{{ ansible_ssh_user }}"
-        shell: /usr/local/bin/zsh
+        shell: /bin/zsh
 
     - name: 'setting macOS'
       osx_defaults: >
