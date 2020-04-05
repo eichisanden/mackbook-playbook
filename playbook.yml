@@ -57,6 +57,7 @@
       homebrew:
         name:
           - ansible
+          - anyenv
           - git
           - go
           - gradle
@@ -69,8 +70,6 @@
           - peco
           - pgcli
           - python
-          - rbenv
-          - ruby-build
           - tree
           - wget
 
