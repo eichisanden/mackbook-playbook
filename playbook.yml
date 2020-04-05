@@ -72,13 +72,6 @@
           - tree
           - wget
 
-    - name: install vim
-      homebrew:
-        name:
-          - vim
-        install_options:
-          --with-override-system-vi
-
     - name: 'check oh-my-zsh'
       stat: path=~/.oh-my-zsh/
       register: d 
