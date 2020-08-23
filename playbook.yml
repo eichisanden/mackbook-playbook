@@ -3,6 +3,7 @@
   gather_facts: no
   become: no
   vars:
+    ansible_python_interpreter: /usr/bin/python3
     # for ansible-role-mas
     mas_installed_apps:
       - { id: 497799835, name: "Xcode (11.6)" }
