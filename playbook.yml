@@ -5,7 +5,7 @@
   vars:
     # for ansible-role-mas
     mas_installed_apps:
-      - { id: 497799835, name: "Xcode (10.1)" }
+      - { id: 497799835, name: "Xcode (11.6)" }
     # for ansible-role-dotfiles
     dotfiles_repo: "git@github.com:eichisanden/dotfiles.git"
     dotfiles_repo_local_destination: "~/src/github.com/eichisanden/dotfiles"
