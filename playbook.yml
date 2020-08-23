@@ -61,6 +61,7 @@
           - git
           - go
           - gradle
+          - graphviz
           - heroku/brew/heroku
           - hugo
           - jq
