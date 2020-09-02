@@ -34,6 +34,7 @@
       homebrew_cask:
         name: "{{ item }}"
       with_items:
+        - alfred
         - cheatsheet
         - clipy
         - corretto
