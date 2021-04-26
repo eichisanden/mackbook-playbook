@@ -47,6 +47,7 @@
         #- intellij-idea
         - iterm2
         #- jetbrains-toolbox
+        - karabiner-elements
         - kindle
         - opera
         - postman
