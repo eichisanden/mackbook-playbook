@@ -31,7 +31,7 @@
       homebrew: update_homebrew=yes
 
     - name: install homebrew cask packages
-      homebrew_cask:
+      community.general.homebrew_cask:
         name: "{{ item }}"
       with_items:
         - alfred
