@@ -84,7 +84,7 @@
       when: d.stat.exists == false
     - name: 'change default shell'
       user:
-        name: "{{ ansible_ssh_user }}"
+        name: "{{ ansible_user }}"
         shell: /bin/zsh
 
     - name: 'setting macOS'
